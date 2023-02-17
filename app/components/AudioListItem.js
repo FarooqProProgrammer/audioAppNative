@@ -1,36 +1,35 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
 import { Entypo } from '@expo/vector-icons';
 import color from '../misc/color';
-import { yellow100 } from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
 
-export class AudioListItem extends Component {
-    render() {
-        return (
-            <>
-            <View style={styles.container}>
-                <View style={styles.leftContainer}>
-                    <View style={styles.thumbnail}>
-                        <Text style={styles.thumbnailText}>A</Text>
-                    </View>
-                    <View style={styles.titleContainer}>
-                        <Text numberOfLines={1} style={styles.title}>A</Text>
-                        <Text numberOfLines={1} style={styles.timeText}>A</Text>
-                        03:59
-                    </View>
 
+const AudioListItem = (props) => {
+    return (
+        <>
+        <View style={styles.container}>
+            <View style={styles.leftContainer}>
+                <View style={styles.thumbnail}>
+                    <Text style={styles.thumbnailText}>A</Text>
                 </View>
-                <View style={styles.RightContainer}>
-                    <Entypo name="dots-three-vertical" size={24} color={color.FONT_MEDIUM} />
+                <View style={styles.titleContainer}>
+                    <Text numberOfLines={1} style={styles.title}>{props.title}</Text>
+                    <Text numberOfLines={1} style={styles.timeText}>{props.duration}</Text>
+                   
                 </View>
+
             </View>
-                <View  style={styles.separator}/>
-            </>
-        )
-    }
+            <View style={styles.RightContainer}>
+                <Entypo name="dots-three-vertical" size={24} color={color.FONT_MEDIUM} />
+            </View>
+        </View>
+            <View  style={styles.separator}/>
+        </>
+    )
 }
 
-export default AudioListItem;
+export default AudioListItem
+
 const {width} = Dimensions.get("window")
 const styles = StyleSheet.create({
     container: {
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     },
     RightContainer:{
         flexBasis:50,
-        backgroundColor:yellow100,
+        backgroundColor:'yellow',
         alignItems: 'center',
         justifyContent: 'center',
     },
