@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignSelf: 'center',
         width:width - 80,
-        backgroundColor:"red"
     },
     leftContainer:{
         flexDirection:'row',
@@ -42,6 +41,8 @@ const styles = StyleSheet.create({
     RightContainer:{
         flexBasis:50,
         backgroundColor:yellow100,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     thumbnail:{
         height:50,
@@ -55,7 +56,14 @@ const styles = StyleSheet.create({
         fontSize:22,
         fontWeight:'bold',
         color:color.FONT,
-        
+    },
+    titleContainer:{
+        width:width - 80,
+        paddingLeft:10
+    },
+    title :{
+        fontSize:16,
+        color:color.FONT
     }
 
 })
